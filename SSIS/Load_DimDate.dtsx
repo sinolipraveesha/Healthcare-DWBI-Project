@@ -1,0 +1,58 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/2/2026 8:48:58 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-U5SG2SJ"
+  DTS:CreatorName="DESKTOP-U5SG2SJ\Sinoli"
+  DTS:DTSID="{1BE569AB-709A-4A26-B22B-34327046164C}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="Package4"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{0FAB981B-0CB5-442C-BD8B-609AD74C587E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load DimDate"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{707878C9-B40A-46C0-B70A-D85D2BEE22C3}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load DimDate"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8EA86E27-4F61-45B8-B202-CB4168DBAAB6}"
+          SQLTask:SqlStatementSource="SET NOCOUNT ON;&#xA;SET DATEFIRST 7;&#xA;&#xA;;WITH DateSeries AS&#xA;(&#xA;    SELECT CAST('1900-01-01' AS DATE) AS FullDate&#xA;&#xA;    UNION ALL&#xA;&#xA;    SELECT DATEADD(DAY, 1, FullDate)&#xA;    FROM DateSeries&#xA;    WHERE FullDate &lt; '2099-12-31'&#xA;)&#xA;INSERT INTO dbo.DimDate&#xA;(&#xA;    DateKey,&#xA;    FullDate,&#xA;    [Year],&#xA;    [Month],&#xA;    MonthName,&#xA;    Quarter,&#xA;    [Day],&#xA;    WeekOfYear,&#xA;    DayOfWeek,&#xA;    IsWeekend&#xA;)&#xA;SELECT&#xA;    CONVERT(INT, CONVERT(CHAR(8), FullDate, 112)) AS DateKey,&#xA;    FullDate,&#xA;    YEAR(FullDate) AS [Year],&#xA;    MONTH(FullDate) AS [Month],&#xA;    DATENAME(MONTH, FullDate) AS MonthName,&#xA;    DATEPART(QUARTER, FullDate) AS Quarter,&#xA;    DAY(FullDate) AS [Day],&#xA;    DATEPART(WEEK, FullDate) AS WeekOfYear,&#xA;    DATENAME(WEEKDAY, FullDate) AS DayOfWeek,&#xA;    CASE&#xA;        WHEN DATEPART(WEEKDAY, FullDate) IN (1,7) THEN 1&#xA;        ELSE 0&#xA;    END AS IsWeekend&#xA;FROM DateSeries d&#xA;WHERE NOT EXISTS&#xA;(&#xA;    SELECT 1&#xA;    FROM dbo.DimDate existing&#xA;    WHERE existing.DateKey =&#xA;          CONVERT(INT, CONVERT(CHAR(8), d.FullDate, 112))&#xA;)&#xA;OPTION (MAXRECURSION 0);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="149.333333333334,42"
+          Id="Package\Load DimDate"
+          TopLeft="149.5,124.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

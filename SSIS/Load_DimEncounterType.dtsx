@@ -1,0 +1,1816 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/2/2026 10:32:57 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-U5SG2SJ"
+  DTS:CreatorName="DESKTOP-U5SG2SJ\Sinoli"
+  DTS:DTSID="{3B6C3A2C-A244-4D1B-A221-04F6FCB0CCF6}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="Package4"
+  DTS:PackageType="5"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{8889860D-7A71-4C47-8CF2-6B96DEF8A807}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{66FE43C9-6FF2-4CF8-81FB-DF6409549CE9}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Users\ASUS\Downloads\Healthcare_DWBI_Project_FINAL.zip\Healthcare_DWBI_Project\02_Staging\Cleaned_Data\Cleaned_Data\Clean_Encounters.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EncounterID"
+              DTS:DTSID="{D9BCDA3F-6419-4B21-B704-9B2961C8999B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StartDateTime"
+              DTS:DTSID="{22F89D0A-A5A9-48E6-A063-5E6C15E3A147}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StopDateTime"
+              DTS:DTSID="{5EE2E919-6F4C-4F80-802B-4DDD4FD140BB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PatientID"
+              DTS:DTSID="{0889B105-5CC1-41CF-8066-33B133D8E5B6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrganizationID"
+              DTS:DTSID="{55864497-38EE-4557-B3D0-532E2D6AC539}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProviderID"
+              DTS:DTSID="{EBE2F510-1140-4088-8D82-F7F97EBC1D3F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PayerID"
+              DTS:DTSID="{7827DAAE-6AD6-4860-AEAB-1C6E4951C78B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EncounterClass"
+              DTS:DTSID="{CB256176-AA58-447F-9820-4FFEBB6EC6AD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EncounterCode"
+              DTS:DTSID="{C505C0B2-7751-4962-A445-CA802BE1A644}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EncounterDescription"
+              DTS:DTSID="{561FF400-89BD-4855-9C19-B409587C34A7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BaseEncounterCost"
+              DTS:DTSID="{729DD763-87E0-485C-AD33-1F1380B6729E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TotalClaimCost"
+              DTS:DTSID="{F14D9B4E-E58A-42C9-9749-99C0BD6F7370}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PayerCoverage"
+              DTS:DTSID="{A1DE5199-C105-4B30-AF0E-4B9187AEDB12}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ReasonCode"
+              DTS:DTSID="{37B4A2E8-6607-45A7-B3A5-4B1258C9A7CF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ReasonDescription"
+              DTS:DTSID="{57A24162-EFF9-4FEB-9FCB-1D303CCFC2DC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PatientOutOfPocketCost"
+              DTS:DTSID="{E9BE1EE1-7B7F-4C5E-8A97-3D56B0663EA0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EncounterDurationMinutes"
+              DTS:DTSID="{2B0F694E-3E97-4DB2-B4B8-14197D2AD674}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load DimEncounterType"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{B639432D-DD7A-41A7-8AE1-39B8E17FCEC4}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load DimEncounterType"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load DimEncounterType\Clean Encounters Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2057"
+              name="Clean Encounters Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load DimEncounterType\Clean Encounters Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[EncounterID]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[EncounterID]"
+                      length="50"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[EncounterID]"
+                      name="EncounterID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[StartDateTime]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[StartDateTime]"
+                      length="50"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[StartDateTime]"
+                      name="StartDateTime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[StopDateTime]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[StopDateTime]"
+                      length="50"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[StopDateTime]"
+                      name="StopDateTime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[PatientID]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[PatientID]"
+                      length="50"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[PatientID]"
+                      name="PatientID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[OrganizationID]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[OrganizationID]"
+                      length="50"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[OrganizationID]"
+                      name="OrganizationID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[ProviderID]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[ProviderID]"
+                      length="50"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[ProviderID]"
+                      name="ProviderID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[PayerID]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[PayerID]"
+                      length="50"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[PayerID]"
+                      name="PayerID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[EncounterClass]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[EncounterClass]"
+                      length="50"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[EncounterClass]"
+                      name="EncounterClass"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[EncounterCode]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[EncounterCode]"
+                      length="50"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[EncounterCode]"
+                      name="EncounterCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[EncounterDescription]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[EncounterDescription]"
+                      length="4000"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[EncounterDescription]"
+                      name="EncounterDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[BaseEncounterCost]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[BaseEncounterCost]"
+                      length="50"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[BaseEncounterCost]"
+                      name="BaseEncounterCost"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[TotalClaimCost]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[TotalClaimCost]"
+                      length="50"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[TotalClaimCost]"
+                      name="TotalClaimCost"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[PayerCoverage]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[PayerCoverage]"
+                      length="50"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[PayerCoverage]"
+                      name="PayerCoverage"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[ReasonCode]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[ReasonCode]"
+                      length="50"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[ReasonCode]"
+                      name="ReasonCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[ReasonDescription]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[ReasonDescription]"
+                      length="4000"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[ReasonDescription]"
+                      name="ReasonDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[PatientOutOfPocketCost]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[PatientOutOfPocketCost]"
+                      length="50"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[PatientOutOfPocketCost]"
+                      name="PatientOutOfPocketCost"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[EncounterDurationMinutes]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[EncounterDurationMinutes]"
+                      length="50"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[EncounterDurationMinutes]"
+                      name="EncounterDurationMinutes"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[EncounterID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="EncounterID" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[StartDateTime]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="StartDateTime" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[StopDateTime]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="StopDateTime" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[PatientID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="PatientID" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[OrganizationID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="OrganizationID" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[ProviderID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="ProviderID" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[PayerID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="PayerID" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[EncounterClass]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="EncounterClass" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[EncounterCode]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="EncounterCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[EncounterDescription]"
+                      codePage="65001"
+                      dataType="str"
+                      length="4000"
+                      name="EncounterDescription" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[BaseEncounterCost]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="BaseEncounterCost" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[TotalClaimCost]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="TotalClaimCost" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[PayerCoverage]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="PayerCoverage" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[ReasonCode]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="ReasonCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[ReasonDescription]"
+                      codePage="65001"
+                      dataType="str"
+                      length="4000"
+                      name="ReasonDescription" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[PatientOutOfPocketCost]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="PatientOutOfPocketCost" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].ExternalColumns[EncounterDurationMinutes]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="EncounterDurationMinutes" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load DimEncounterType\Convert Encounter Type Unicode"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Convert Encounter Type Unicode"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load DimEncounterType\Convert Encounter Type Unicode.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load DimEncounterType\Convert Encounter Type Unicode.Inputs[Derived Column Input].Columns[EncounterCode]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EncounterCode"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[EncounterCode]" />
+                    <inputColumn
+                      refId="Package\Load DimEncounterType\Convert Encounter Type Unicode.Inputs[Derived Column Input].Columns[EncounterDescription]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="4000"
+                      cachedName="EncounterDescription"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[EncounterDescription]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load DimEncounterType\Convert Encounter Type Unicode.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load DimEncounterType\Convert Encounter Type Unicode.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Convert Encounter Type Unicode.Outputs[Derived Column Output].Columns[EncounterCode_Unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\Load DimEncounterType\Convert Encounter Type Unicode.Outputs[Derived Column Output].Columns[EncounterCode_Unicode]"
+                      name="EncounterCode_Unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,100)#{Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[EncounterCode]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,100)EncounterCode</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Convert Encounter Type Unicode.Outputs[Derived Column Output].Columns[EncounterDescription_Unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="500"
+                      lineageId="Package\Load DimEncounterType\Convert Encounter Type Unicode.Outputs[Derived Column Output].Columns[EncounterDescription_Unicode]"
+                      name="EncounterDescription_Unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,500)#{Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[EncounterDescription]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,500)EncounterDescription</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load DimEncounterType\Convert Encounter Type Unicode.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load DimEncounterType\Convert Encounter Type Unicode.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Convert Encounter Type Unicode.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load DimEncounterType\Convert Encounter Type Unicode.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Convert Encounter Type Unicode.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load DimEncounterType\Convert Encounter Type Unicode.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load DimEncounterType\DimEncounterType Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DimEncounterType Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimEncounterType]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load DimEncounterType\DimEncounterType Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{8EA86E27-4F61-45B8-B202-CB4168DBAAB6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.HealthcareDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load DimEncounterType\DimEncounterType Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load DimEncounterType\DimEncounterType Destination.Inputs[OLE DB Destination Input].Columns[EncounterCode_Unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="EncounterCode_Unicode"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Load DimEncounterType\DimEncounterType Destination.Inputs[OLE DB Destination Input].ExternalColumns[EncounterTypeCode]"
+                      lineageId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[EncounterCode_Unicode]" />
+                    <inputColumn
+                      refId="Package\Load DimEncounterType\DimEncounterType Destination.Inputs[OLE DB Destination Input].Columns[EncounterDescription_Unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="500"
+                      cachedName="EncounterDescription_Unicode"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\Load DimEncounterType\DimEncounterType Destination.Inputs[OLE DB Destination Input].ExternalColumns[EncounterTypeDescription]"
+                      lineageId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[EncounterDescription_Unicode]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load DimEncounterType\DimEncounterType Destination.Inputs[OLE DB Destination Input].ExternalColumns[EncounterTypeKey]"
+                      dataType="i4"
+                      name="EncounterTypeKey" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimEncounterType\DimEncounterType Destination.Inputs[OLE DB Destination Input].ExternalColumns[EncounterTypeCode]"
+                      dataType="wstr"
+                      length="100"
+                      name="EncounterTypeCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimEncounterType\DimEncounterType Destination.Inputs[OLE DB Destination Input].ExternalColumns[EncounterTypeDescription]"
+                      dataType="wstr"
+                      length="255"
+                      name="EncounterTypeDescription" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load DimEncounterType\DimEncounterType Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load DimEncounterType\DimEncounterType Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\DimEncounterType Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load DimEncounterType\DimEncounterType Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\DimEncounterType Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load DimEncounterType\DimEncounterType Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Remove Duplicate Encounter Types"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Inputs[Sort Input].Columns[EncounterID]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EncounterID"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[EncounterID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Inputs[Sort Input].Columns[StartDateTime]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="StartDateTime"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[StartDateTime]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Inputs[Sort Input].Columns[StopDateTime]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="StopDateTime"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[StopDateTime]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Inputs[Sort Input].Columns[PatientID]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PatientID"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[PatientID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Inputs[Sort Input].Columns[OrganizationID]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="OrganizationID"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[OrganizationID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Inputs[Sort Input].Columns[ProviderID]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ProviderID"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[ProviderID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Inputs[Sort Input].Columns[PayerID]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PayerID"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[PayerID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Inputs[Sort Input].Columns[EncounterClass]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EncounterClass"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[EncounterClass]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Inputs[Sort Input].Columns[EncounterCode]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EncounterCode"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[EncounterCode]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Inputs[Sort Input].Columns[EncounterDescription]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="4000"
+                      cachedName="EncounterDescription"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[EncounterDescription]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Inputs[Sort Input].Columns[BaseEncounterCost]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BaseEncounterCost"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[BaseEncounterCost]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Inputs[Sort Input].Columns[TotalClaimCost]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TotalClaimCost"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[TotalClaimCost]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Inputs[Sort Input].Columns[PayerCoverage]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PayerCoverage"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[PayerCoverage]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Inputs[Sort Input].Columns[ReasonCode]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ReasonCode"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[ReasonCode]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Inputs[Sort Input].Columns[ReasonDescription]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="4000"
+                      cachedName="ReasonDescription"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[ReasonDescription]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Inputs[Sort Input].Columns[PatientOutOfPocketCost]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PatientOutOfPocketCost"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[PatientOutOfPocketCost]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Inputs[Sort Input].Columns[EncounterDurationMinutes]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EncounterDurationMinutes"
+                      lineageId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[EncounterDurationMinutes]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Inputs[Sort Input].Columns[EncounterCode_Unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="EncounterCode_Unicode"
+                      lineageId="Package\Load DimEncounterType\Convert Encounter Type Unicode.Outputs[Derived Column Output].Columns[EncounterCode_Unicode]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Inputs[Sort Input].Columns[EncounterDescription_Unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="500"
+                      cachedName="EncounterDescription_Unicode"
+                      lineageId="Package\Load DimEncounterType\Convert Encounter Type Unicode.Outputs[Derived Column Output].Columns[EncounterDescription_Unicode]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[EncounterID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[EncounterID]"
+                      name="EncounterID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[EncounterID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[StartDateTime]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[StartDateTime]"
+                      name="StartDateTime">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[StartDateTime]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[StopDateTime]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[StopDateTime]"
+                      name="StopDateTime">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[StopDateTime]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[PatientID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[PatientID]"
+                      name="PatientID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[PatientID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[OrganizationID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[OrganizationID]"
+                      name="OrganizationID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[OrganizationID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[ProviderID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[ProviderID]"
+                      name="ProviderID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[ProviderID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[PayerID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[PayerID]"
+                      name="PayerID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[PayerID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[EncounterClass]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[EncounterClass]"
+                      name="EncounterClass">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[EncounterClass]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[EncounterCode]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[EncounterCode]"
+                      name="EncounterCode">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[EncounterCode]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[EncounterDescription]"
+                      codePage="65001"
+                      dataType="str"
+                      length="4000"
+                      lineageId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[EncounterDescription]"
+                      name="EncounterDescription">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[EncounterDescription]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[BaseEncounterCost]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[BaseEncounterCost]"
+                      name="BaseEncounterCost">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[BaseEncounterCost]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[TotalClaimCost]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[TotalClaimCost]"
+                      name="TotalClaimCost">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[TotalClaimCost]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[PayerCoverage]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[PayerCoverage]"
+                      name="PayerCoverage">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[PayerCoverage]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[ReasonCode]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[ReasonCode]"
+                      name="ReasonCode">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[ReasonCode]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[ReasonDescription]"
+                      codePage="65001"
+                      dataType="str"
+                      length="4000"
+                      lineageId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[ReasonDescription]"
+                      name="ReasonDescription">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[ReasonDescription]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[PatientOutOfPocketCost]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[PatientOutOfPocketCost]"
+                      name="PatientOutOfPocketCost">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[PatientOutOfPocketCost]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[EncounterDurationMinutes]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[EncounterDurationMinutes]"
+                      name="EncounterDurationMinutes">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output].Columns[EncounterDurationMinutes]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[EncounterCode_Unicode]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[EncounterCode_Unicode]"
+                      name="EncounterCode_Unicode"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimEncounterType\Convert Encounter Type Unicode.Outputs[Derived Column Output].Columns[EncounterCode_Unicode]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[EncounterDescription_Unicode]"
+                      dataType="wstr"
+                      length="500"
+                      lineageId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output].Columns[EncounterDescription_Unicode]"
+                      name="EncounterDescription_Unicode"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimEncounterType\Convert Encounter Type Unicode.Outputs[Derived Column Output].Columns[EncounterDescription_Unicode]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load DimEncounterType.Paths[Derived Column Output]"
+              endId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Inputs[Sort Input]"
+              name="Derived Column Output"
+              startId="Package\Load DimEncounterType\Convert Encounter Type Unicode.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load DimEncounterType.Paths[Flat File Source Output]"
+              endId="Package\Load DimEncounterType\Convert Encounter Type Unicode.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Load DimEncounterType\Clean Encounters Source.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Load DimEncounterType.Paths[Sort Output]"
+              endId="Package\Load DimEncounterType\DimEncounterType Destination.Inputs[OLE DB Destination Input]"
+              name="Sort Output"
+              startId="Package\Load DimEncounterType\Remove Duplicate Encounter Types.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="201.333333333334,42"
+          Id="Package\Load DimEncounterType"
+          TopLeft="204,99" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load DimEncounterType">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="230.666666666667,42"
+          Id="Package\Load DimEncounterType\DimEncounterType Destination"
+          TopLeft="288.5,387.5" />
+        <NodeLayout
+          Size="254.666666666667,42"
+          Id="Package\Load DimEncounterType\Remove Duplicate Encounter Types"
+          TopLeft="244.5,279.5" />
+        <NodeLayout
+          Size="241.333333333334,42"
+          Id="Package\Load DimEncounterType\Convert Encounter Type Unicode"
+          TopLeft="244.5,161.5" />
+        <NodeLayout
+          Size="204,42"
+          Id="Package\Load DimEncounterType\Clean Encounters Source"
+          TopLeft="261.5,49.5" />
+        <EdgeLayout
+          Id="Package\Load DimEncounterType.Paths[Flat File Source Output]"
+          TopLeft="364.25,91.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,70"
+              Start="0,0"
+              End="0,62.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load DimEncounterType.Paths[Derived Column Output]"
+          TopLeft="368.5,203.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,76"
+              Start="0,0"
+              End="0,68.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load DimEncounterType.Paths[Sort Output]"
+          TopLeft="372,321.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="32,66"
+              Start="0,0"
+              End="32,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29"
+                    Point2="0,33"
+                    Point3="4,33" />
+                  <mssgle:LineSegment
+                    End="28,33" />
+                  <mssgle:CubicBezierSegment
+                    Point1="28,33"
+                    Point2="32,33"
+                    Point3="32,37" />
+                  <mssgle:LineSegment
+                    End="32,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load DimEncounterType\DimEncounterType Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

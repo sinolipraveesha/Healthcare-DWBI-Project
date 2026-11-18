@@ -1,0 +1,1375 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/1/2026 10:23:42 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-U5SG2SJ"
+  DTS:CreatorName="DESKTOP-U5SG2SJ\Sinoli"
+  DTS:DTSID="{1FA67913-F52C-463B-A3BA-BB6BDAC154AC}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="Load_Dimensions"
+  DTS:PackageType="5"
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{9428CDAC-85EE-46D9-96D1-FCB3D6A6DD1A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CM_HealthcareDW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{241F3B9F-C3A2-482B-9E46-A351F0A86DD1}"
+      DTS:ObjectName="CM_HealthcareDW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;User ID=;Initial Catalog=HealthcareDW;Provider=MSOLEDBSQL19.1;Persist Security Info=False;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Load_Dimensions-{241F3B9F-C3A2-482B-9E46-A351F0A86DD1}localhost;Initial File Name=;Trust Server Certificate=True;Server SPN=;Authentication=;Access Token=;Host Name In Certificate=;Server Certificate=;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FF_Clean_Patients]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{E9465210-5ACD-494A-B815-D5BE52DFA2F6}"
+      DTS:ObjectName="FF_Clean_Patients">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Users\ASUS\Downloads\Healthcare_DWBI_Project_FINAL.zip\Healthcare_DWBI_Project\02_Staging\Cleaned_Data\Cleaned_Data\Clean_Patients.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PatientID"
+              DTS:DTSID="{C2B34CA9-30C8-4C04-8073-161DE07D2ADF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BirthDate"
+              DTS:DTSID="{725E37A8-45FC-45AE-A7B1-C1BE0E1DC54D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DeathDate"
+              DTS:DTSID="{36B1A5F4-8055-4EBC-88C2-74DD7E3C607E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MaritalStatus"
+              DTS:DTSID="{332BFD07-6F4F-4598-AB0E-ECE4B24BA2D8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Race"
+              DTS:DTSID="{E968A807-924A-4D11-83D1-D947F5C5EAC5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ethnicity"
+              DTS:DTSID="{BF42CE17-5287-4658-929A-E38AACCF0315}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Gender"
+              DTS:DTSID="{C8497F78-6B15-4893-AE6D-2106F986A2E7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="300"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Birthplace"
+              DTS:DTSID="{C20E3EED-FDE0-4669-94C6-02707DF6A7CF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="City"
+              DTS:DTSID="{286EE72D-D076-412C-8B8F-F8556DD7499A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="State"
+              DTS:DTSID="{1896A2E6-ADFD-4E9E-B13E-0355E87F48CE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="County"
+              DTS:DTSID="{6875F12D-2A5A-4313-8129-A5E9A0854B6F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ZIP"
+              DTS:DTSID="{2963328A-7796-4BDD-93E6-04CA8B3C474F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Latitude"
+              DTS:DTSID="{F5820BC4-7F66-45A4-8000-2D5C50B31226}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Longitude"
+              DTS:DTSID="{488336DD-B8B9-43C8-9388-265408ABF547}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HealthcareExpenses"
+              DTS:DTSID="{0F7E069C-C6F4-480D-B510-439B423A6E31}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HealthcareCoverage"
+              DTS:DTSID="{BE757D02-9AED-45DA-B0D5-8A191687C83E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SourceType"
+              DTS:DTSID="{26C56D65-2BE9-48A4-85AE-E587E11EEB6B}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load DimPatient"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{75CF2B36-65BC-4C00-BA0B-61B17CC4D8D9}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load DimPatient"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load DimPatient\Clean Patients Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2057"
+              name="Clean Patients Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load DimPatient\Clean Patients Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[FF_Clean_Patients]"
+                  connectionManagerRefId="Package.ConnectionManagers[FF_Clean_Patients]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[PatientID]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[PatientID]"
+                      length="50"
+                      lineageId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[PatientID]"
+                      name="PatientID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[BirthDate]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[BirthDate]"
+                      length="50"
+                      lineageId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[BirthDate]"
+                      name="BirthDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[DeathDate]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[DeathDate]"
+                      length="50"
+                      lineageId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[DeathDate]"
+                      name="DeathDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[MaritalStatus]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[MaritalStatus]"
+                      length="50"
+                      lineageId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[MaritalStatus]"
+                      name="MaritalStatus"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[Race]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[Race]"
+                      length="50"
+                      lineageId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[Race]"
+                      name="Race"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[Ethnicity]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[Ethnicity]"
+                      length="50"
+                      lineageId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[Ethnicity]"
+                      name="Ethnicity"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[Gender]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[Gender]"
+                      length="50"
+                      lineageId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[Gender]"
+                      name="Gender"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[Birthplace]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[Birthplace]"
+                      length="300"
+                      lineageId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[Birthplace]"
+                      name="Birthplace"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[City]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[City]"
+                      length="50"
+                      lineageId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[State]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[State]"
+                      length="50"
+                      lineageId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[State]"
+                      name="State"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[County]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[County]"
+                      length="50"
+                      lineageId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[County]"
+                      name="County"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[ZIP]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[ZIP]"
+                      length="50"
+                      lineageId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[ZIP]"
+                      name="ZIP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[Latitude]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[Latitude]"
+                      length="50"
+                      lineageId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[Latitude]"
+                      name="Latitude"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[Longitude]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[Longitude]"
+                      length="50"
+                      lineageId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[Longitude]"
+                      name="Longitude"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[HealthcareExpenses]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[HealthcareExpenses]"
+                      length="50"
+                      lineageId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[HealthcareExpenses]"
+                      name="HealthcareExpenses"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[HealthcareCoverage]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[HealthcareCoverage]"
+                      length="50"
+                      lineageId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[HealthcareCoverage]"
+                      name="HealthcareCoverage"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[SourceType]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[SourceType]"
+                      length="50"
+                      lineageId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[SourceType]"
+                      name="SourceType"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[PatientID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="PatientID" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[BirthDate]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="BirthDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[DeathDate]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="DeathDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[MaritalStatus]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="MaritalStatus" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[Race]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Race" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[Ethnicity]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Ethnicity" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[Gender]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[Birthplace]"
+                      codePage="65001"
+                      dataType="str"
+                      length="300"
+                      name="Birthplace" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[City]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[State]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[County]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="County" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[ZIP]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="ZIP" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[Latitude]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Latitude" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[Longitude]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Longitude" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[HealthcareExpenses]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="HealthcareExpenses" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[HealthcareCoverage]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="HealthcareCoverage" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].ExternalColumns[SourceType]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="SourceType" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load DimPatient\Convert Patient Data Types"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Convert Patient Data Types"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load DimPatient\Convert Patient Data Types.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load DimPatient\Convert Patient Data Types.Inputs[Data Conversion Input].Columns[BirthDate]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BirthDate"
+                      lineageId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[BirthDate]" />
+                    <inputColumn
+                      refId="Package\Load DimPatient\Convert Patient Data Types.Inputs[Data Conversion Input].Columns[PatientID]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PatientID"
+                      lineageId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[PatientID]" />
+                    <inputColumn
+                      refId="Package\Load DimPatient\Convert Patient Data Types.Inputs[Data Conversion Input].Columns[Race]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Race"
+                      lineageId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[Race]" />
+                    <inputColumn
+                      refId="Package\Load DimPatient\Convert Patient Data Types.Inputs[Data Conversion Input].Columns[Ethnicity]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Ethnicity"
+                      lineageId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[Ethnicity]" />
+                    <inputColumn
+                      refId="Package\Load DimPatient\Convert Patient Data Types.Inputs[Data Conversion Input].Columns[Gender]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Gender"
+                      lineageId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[Gender]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load DimPatient\Convert Patient Data Types.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Load DimPatient\Convert Patient Data Types.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimPatient\Convert Patient Data Types.Outputs[Data Conversion Output].Columns[BirthDate_Converted]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load DimPatient\Convert Patient Data Types.Outputs[Data Conversion Output].Columns[BirthDate_Converted]"
+                      name="BirthDate_Converted"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[BirthDate]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimPatient\Convert Patient Data Types.Outputs[Data Conversion Output].Columns[PatientID_Converted]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\Load DimPatient\Convert Patient Data Types.Outputs[Data Conversion Output].Columns[PatientID_Converted]"
+                      name="PatientID_Converted"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[PatientID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimPatient\Convert Patient Data Types.Outputs[Data Conversion Output].Columns[Race_Converted]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load DimPatient\Convert Patient Data Types.Outputs[Data Conversion Output].Columns[Race_Converted]"
+                      name="Race_Converted"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[Race]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimPatient\Convert Patient Data Types.Outputs[Data Conversion Output].Columns[Ethnicity_Converted]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load DimPatient\Convert Patient Data Types.Outputs[Data Conversion Output].Columns[Ethnicity_Converted]"
+                      name="Ethnicity_Converted"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[Ethnicity]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimPatient\Convert Patient Data Types.Outputs[Data Conversion Output].Columns[Gender_Converted]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\Load DimPatient\Convert Patient Data Types.Outputs[Data Conversion Output].Columns[Gender_Converted]"
+                      name="Gender_Converted"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output].Columns[Gender]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load DimPatient\Convert Patient Data Types.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Load DimPatient\Convert Patient Data Types.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimPatient\Convert Patient Data Types.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load DimPatient\Convert Patient Data Types.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load DimPatient\Convert Patient Data Types.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load DimPatient\Convert Patient Data Types.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load DimPatient\Derive Patient Age"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derive Patient Age"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load DimPatient\Derive Patient Age.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load DimPatient\Derive Patient Age.Inputs[Derived Column Input].Columns[BirthDate_Converted]"
+                      cachedDataType="dbDate"
+                      cachedName="BirthDate_Converted"
+                      lineageId="Package\Load DimPatient\Convert Patient Data Types.Outputs[Data Conversion Output].Columns[BirthDate_Converted]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load DimPatient\Derive Patient Age.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load DimPatient\Derive Patient Age.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimPatient\Derive Patient Age.Outputs[Derived Column Output].Columns[Age]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load DimPatient\Derive Patient Age.Outputs[Derived Column Output].Columns[Age]"
+                      name="Age"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_I4)([DATEDIFF]("yyyy",#{Package\Load DimPatient\Convert Patient Data Types.Outputs[Data Conversion Output].Columns[BirthDate_Converted]},[GETDATE]()) - (([DATEPART]("mm",[GETDATE]()) &lt; [DATEPART]("mm",#{Package\Load DimPatient\Convert Patient Data Types.Outputs[Data Conversion Output].Columns[BirthDate_Converted]}) || ([DATEPART]("mm",[GETDATE]()) == [DATEPART]("mm",#{Package\Load DimPatient\Convert Patient Data Types.Outputs[Data Conversion Output].Columns[BirthDate_Converted]}) &amp;&amp; [DATEPART]("dd",[GETDATE]()) &lt; [DATEPART]("dd",#{Package\Load DimPatient\Convert Patient Data Types.Outputs[Data Conversion Output].Columns[BirthDate_Converted]}))) ? 1 : 0))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_I4)(DATEDIFF("yyyy",BirthDate_Converted,GETDATE()) - ((DATEPART("mm",GETDATE()) &lt; DATEPART("mm",BirthDate_Converted) || (DATEPART("mm",GETDATE()) == DATEPART("mm",BirthDate_Converted) &amp;&amp; DATEPART("dd",GETDATE()) &lt; DATEPART("dd",BirthDate_Converted))) ? 1 : 0))</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load DimPatient\Derive Patient Age.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load DimPatient\Derive Patient Age.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimPatient\Derive Patient Age.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load DimPatient\Derive Patient Age.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load DimPatient\Derive Patient Age.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load DimPatient\Derive Patient Age.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load DimPatient\DimPatient Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DimPatient Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimPatient]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load DimPatient\DimPatient Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{8EA86E27-4F61-45B8-B202-CB4168DBAAB6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.HealthcareDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load DimPatient\DimPatient Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load DimPatient\DimPatient Destination.Inputs[OLE DB Destination Input].Columns[Age]"
+                      cachedDataType="i4"
+                      cachedName="Age"
+                      externalMetadataColumnId="Package\Load DimPatient\DimPatient Destination.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      lineageId="Package\Load DimPatient\Derive Patient Age.Outputs[Derived Column Output].Columns[Age]" />
+                    <inputColumn
+                      refId="Package\Load DimPatient\DimPatient Destination.Inputs[OLE DB Destination Input].Columns[PatientID_Converted]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="PatientID_Converted"
+                      externalMetadataColumnId="Package\Load DimPatient\DimPatient Destination.Inputs[OLE DB Destination Input].ExternalColumns[PatientID]"
+                      lineageId="Package\Load DimPatient\Convert Patient Data Types.Outputs[Data Conversion Output].Columns[PatientID_Converted]" />
+                    <inputColumn
+                      refId="Package\Load DimPatient\DimPatient Destination.Inputs[OLE DB Destination Input].Columns[Gender_Converted]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Gender_Converted"
+                      externalMetadataColumnId="Package\Load DimPatient\DimPatient Destination.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      lineageId="Package\Load DimPatient\Convert Patient Data Types.Outputs[Data Conversion Output].Columns[Gender_Converted]" />
+                    <inputColumn
+                      refId="Package\Load DimPatient\DimPatient Destination.Inputs[OLE DB Destination Input].Columns[BirthDate_Converted]"
+                      cachedDataType="dbDate"
+                      cachedName="BirthDate_Converted"
+                      externalMetadataColumnId="Package\Load DimPatient\DimPatient Destination.Inputs[OLE DB Destination Input].ExternalColumns[BirthDate]"
+                      lineageId="Package\Load DimPatient\Convert Patient Data Types.Outputs[Data Conversion Output].Columns[BirthDate_Converted]" />
+                    <inputColumn
+                      refId="Package\Load DimPatient\DimPatient Destination.Inputs[OLE DB Destination Input].Columns[Race_Converted]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Race_Converted"
+                      externalMetadataColumnId="Package\Load DimPatient\DimPatient Destination.Inputs[OLE DB Destination Input].ExternalColumns[Race]"
+                      lineageId="Package\Load DimPatient\Convert Patient Data Types.Outputs[Data Conversion Output].Columns[Race_Converted]" />
+                    <inputColumn
+                      refId="Package\Load DimPatient\DimPatient Destination.Inputs[OLE DB Destination Input].Columns[Ethnicity_Converted]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Ethnicity_Converted"
+                      externalMetadataColumnId="Package\Load DimPatient\DimPatient Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ethnicity]"
+                      lineageId="Package\Load DimPatient\Convert Patient Data Types.Outputs[Data Conversion Output].Columns[Ethnicity_Converted]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load DimPatient\DimPatient Destination.Inputs[OLE DB Destination Input].ExternalColumns[PatientKey]"
+                      dataType="i4"
+                      name="PatientKey" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimPatient\DimPatient Destination.Inputs[OLE DB Destination Input].ExternalColumns[PatientID]"
+                      dataType="wstr"
+                      length="100"
+                      name="PatientID" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimPatient\DimPatient Destination.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      dataType="wstr"
+                      length="20"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimPatient\DimPatient Destination.Inputs[OLE DB Destination Input].ExternalColumns[BirthDate]"
+                      dataType="dbDate"
+                      name="BirthDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimPatient\DimPatient Destination.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      dataType="i4"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimPatient\DimPatient Destination.Inputs[OLE DB Destination Input].ExternalColumns[Race]"
+                      dataType="wstr"
+                      length="50"
+                      name="Race" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimPatient\DimPatient Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ethnicity]"
+                      dataType="wstr"
+                      length="50"
+                      name="Ethnicity" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load DimPatient\DimPatient Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load DimPatient\DimPatient Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimPatient\DimPatient Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load DimPatient\DimPatient Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load DimPatient\DimPatient Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load DimPatient\DimPatient Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load DimPatient.Paths[Data Conversion Output]"
+              endId="Package\Load DimPatient\Derive Patient Age.Inputs[Derived Column Input]"
+              name="Data Conversion Output"
+              startId="Package\Load DimPatient\Convert Patient Data Types.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Load DimPatient.Paths[Derived Column Output]"
+              endId="Package\Load DimPatient\DimPatient Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Load DimPatient\Derive Patient Age.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load DimPatient.Paths[Flat File Source Output]"
+              endId="Package\Load DimPatient\Convert Patient Data Types.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\Load DimPatient\Clean Patients Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Load DimPatient"
+          TopLeft="35.5,35.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load DimPatient">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="170.666666666667,42"
+          Id="Package\Load DimPatient\Derive Patient Age"
+          TopLeft="77.5,305.5" />
+        <NodeLayout
+          Size="190.666666666667,42"
+          Id="Package\Load DimPatient\DimPatient Destination"
+          TopLeft="65.5,456.5" />
+        <NodeLayout
+          Size="214,42"
+          Id="Package\Load DimPatient\Convert Patient Data Types"
+          TopLeft="38.5,181.5" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Load DimPatient\Clean Patients Source"
+          TopLeft="39.5,13.5" />
+        <EdgeLayout
+          Id="Package\Load DimPatient.Paths[Derived Column Output]"
+          TopLeft="162,347.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,109"
+              Start="0,0"
+              End="0,101.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,101.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load DimPatient.Paths[Data Conversion Output]"
+          TopLeft="145.5,223.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="17.5,82"
+              Start="0,0"
+              End="17.5,74.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37"
+                    Point2="0,41"
+                    Point3="4,41" />
+                  <mssgle:LineSegment
+                    End="13.5,41" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.5,41"
+                    Point2="17.5,41"
+                    Point3="17.5,45" />
+                  <mssgle:LineSegment
+                    End="17.5,74.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load DimPatient.Paths[Flat File Source Output]"
+          TopLeft="133.5,55.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12,126"
+              Start="0,0"
+              End="12,118.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,59"
+                    Point2="0,63"
+                    Point3="4,63" />
+                  <mssgle:LineSegment
+                    End="8,63" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8,63"
+                    Point2="12,63"
+                    Point3="12,67" />
+                  <mssgle:LineSegment
+                    End="12,118.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load DimPatient\DimPatient Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

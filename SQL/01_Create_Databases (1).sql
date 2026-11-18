@@ -1,0 +1,5 @@
+CREATE DATABASE Synthea_Staging;
+GO
+
+CREATE DATABASE Synthea_DW;
+GO

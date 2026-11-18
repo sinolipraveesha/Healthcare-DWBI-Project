@@ -1,0 +1,1320 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/2/2026 6:34:15 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-U5SG2SJ"
+  DTS:CreatorName="DESKTOP-U5SG2SJ\Sinoli"
+  DTS:DTSID="{E4D2FFA1-7B5D-4429-AADD-F7CF72BE216E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="Load_DimProcedure"
+  DTS:PackageType="5"
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{D28BE8F2-33D1-44AE-A2F6-073856089ED8}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{69DA254F-42D0-4DA0-8CBB-C594E703633E}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Users\ASUS\Downloads\Healthcare_DWBI_Project_FINAL.zip\Healthcare_DWBI_Project\02_Staging\Cleaned_Data\Cleaned_Data\Clean_Procedures.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProcedureID"
+              DTS:DTSID="{EFC3C28E-12A8-478D-BAD4-3B1AA3FD4452}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StartDateTime"
+              DTS:DTSID="{0BB96D8A-754E-4DD4-A8A9-3B3A0095AB6D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StopDateTime"
+              DTS:DTSID="{E430DFBF-E7DD-470B-B0C1-35E718F094EF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PatientID"
+              DTS:DTSID="{37A8EBE8-FAF8-4104-8244-97DF24833F9F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EncounterID"
+              DTS:DTSID="{AFD974BC-18CB-49AF-B7A0-C81517BE46CE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProcedureCode"
+              DTS:DTSID="{89B9C1ED-AFA0-473D-A0D5-A3A736779BE0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProcedureDescription"
+              DTS:DTSID="{619CB3AF-960E-4A76-B1EB-7BCFE1309E40}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BaseCost"
+              DTS:DTSID="{0D09BBE6-7AD5-4EBF-B538-0ADD965D287D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ReasonCode"
+              DTS:DTSID="{86CA6BC4-6202-4003-8B68-390B20102243}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ReasonDescription"
+              DTS:DTSID="{79C14D37-2168-48B8-A2AD-89DB348E8A2D}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load DimProcedure"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{C0AF1655-FD52-4565-B243-58A21B10CAB2}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load DimProcedure"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load DimProcedure\Clean Procedures Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2057"
+              name="Clean Procedures Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load DimProcedure\Clean Procedures Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[ProcedureID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].ExternalColumns[ProcedureID]"
+                      length="100"
+                      lineageId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[ProcedureID]"
+                      name="ProcedureID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[StartDateTime]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].ExternalColumns[StartDateTime]"
+                      length="50"
+                      lineageId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[StartDateTime]"
+                      name="StartDateTime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[StopDateTime]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].ExternalColumns[StopDateTime]"
+                      length="50"
+                      lineageId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[StopDateTime]"
+                      name="StopDateTime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[PatientID]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].ExternalColumns[PatientID]"
+                      length="50"
+                      lineageId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[PatientID]"
+                      name="PatientID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[EncounterID]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].ExternalColumns[EncounterID]"
+                      length="50"
+                      lineageId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[EncounterID]"
+                      name="EncounterID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[ProcedureCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].ExternalColumns[ProcedureCode]"
+                      length="100"
+                      lineageId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[ProcedureCode]"
+                      name="ProcedureCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[ProcedureDescription]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].ExternalColumns[ProcedureDescription]"
+                      length="4000"
+                      lineageId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[ProcedureDescription]"
+                      name="ProcedureDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[BaseCost]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].ExternalColumns[BaseCost]"
+                      length="50"
+                      lineageId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[BaseCost]"
+                      name="BaseCost"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[ReasonCode]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].ExternalColumns[ReasonCode]"
+                      length="50"
+                      lineageId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[ReasonCode]"
+                      name="ReasonCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[ReasonDescription]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].ExternalColumns[ReasonDescription]"
+                      length="4000"
+                      lineageId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[ReasonDescription]"
+                      name="ReasonDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].ExternalColumns[ProcedureID]"
+                      dataType="wstr"
+                      length="100"
+                      name="ProcedureID" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].ExternalColumns[StartDateTime]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="StartDateTime" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].ExternalColumns[StopDateTime]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="StopDateTime" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].ExternalColumns[PatientID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="PatientID" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].ExternalColumns[EncounterID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="EncounterID" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].ExternalColumns[ProcedureCode]"
+                      dataType="wstr"
+                      length="100"
+                      name="ProcedureCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].ExternalColumns[ProcedureDescription]"
+                      dataType="wstr"
+                      length="4000"
+                      name="ProcedureDescription" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].ExternalColumns[BaseCost]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="BaseCost" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].ExternalColumns[ReasonCode]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="ReasonCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].ExternalColumns[ReasonDescription]"
+                      dataType="wstr"
+                      length="4000"
+                      name="ReasonDescription" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load DimProcedure\Convert Procedure Unicode"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Convert Procedure Unicode"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load DimProcedure\Convert Procedure Unicode.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load DimProcedure\Convert Procedure Unicode.Inputs[Derived Column Input].Columns[ProcedureCode]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="ProcedureCode"
+                      lineageId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[ProcedureCode]" />
+                    <inputColumn
+                      refId="Package\Load DimProcedure\Convert Procedure Unicode.Inputs[Derived Column Input].Columns[ProcedureDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="4000"
+                      cachedName="ProcedureDescription"
+                      lineageId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[ProcedureDescription]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load DimProcedure\Convert Procedure Unicode.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load DimProcedure\Convert Procedure Unicode.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimProcedure\Convert Procedure Unicode.Outputs[Derived Column Output].Columns[ProcedureCode_Unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\Load DimProcedure\Convert Procedure Unicode.Outputs[Derived Column Output].Columns[ProcedureCode_Unicode]"
+                      name="ProcedureCode_Unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,100)#{Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[ProcedureCode]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,100)ProcedureCode</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimProcedure\Convert Procedure Unicode.Outputs[Derived Column Output].Columns[ProcedureDescription_Unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="500"
+                      lineageId="Package\Load DimProcedure\Convert Procedure Unicode.Outputs[Derived Column Output].Columns[ProcedureDescription_Unicode]"
+                      name="ProcedureDescription_Unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,500)#{Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[ProcedureDescription]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,500)ProcedureDescription</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load DimProcedure\Convert Procedure Unicode.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load DimProcedure\Convert Procedure Unicode.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimProcedure\Convert Procedure Unicode.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load DimProcedure\Convert Procedure Unicode.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load DimProcedure\Convert Procedure Unicode.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load DimProcedure\Convert Procedure Unicode.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load DimProcedure\DimProcedure Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DimProcedure Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimProcedure]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load DimProcedure\DimProcedure Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{8EA86E27-4F61-45B8-B202-CB4168DBAAB6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.HealthcareDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load DimProcedure\DimProcedure Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load DimProcedure\DimProcedure Destination.Inputs[OLE DB Destination Input].Columns[ProcedureCode_Unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="ProcedureCode_Unicode"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Load DimProcedure\DimProcedure Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProcedureCode]"
+                      lineageId="Package\Load DimProcedure\Remove Duplicate Procedures.Outputs[Sort Output].Columns[ProcedureCode_Unicode]" />
+                    <inputColumn
+                      refId="Package\Load DimProcedure\DimProcedure Destination.Inputs[OLE DB Destination Input].Columns[ProcedureDescription_Unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="500"
+                      cachedName="ProcedureDescription_Unicode"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\Load DimProcedure\DimProcedure Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProcedureDescription]"
+                      lineageId="Package\Load DimProcedure\Remove Duplicate Procedures.Outputs[Sort Output].Columns[ProcedureDescription_Unicode]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load DimProcedure\DimProcedure Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProcedureKey]"
+                      dataType="i4"
+                      name="ProcedureKey" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimProcedure\DimProcedure Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProcedureCode]"
+                      dataType="wstr"
+                      length="100"
+                      name="ProcedureCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimProcedure\DimProcedure Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProcedureDescription]"
+                      dataType="wstr"
+                      length="500"
+                      name="ProcedureDescription" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load DimProcedure\DimProcedure Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load DimProcedure\DimProcedure Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimProcedure\DimProcedure Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load DimProcedure\DimProcedure Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load DimProcedure\DimProcedure Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load DimProcedure\DimProcedure Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load DimProcedure\Remove Duplicate Procedures"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Remove Duplicate Procedures"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load DimProcedure\Remove Duplicate Procedures.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load DimProcedure\Remove Duplicate Procedures.Inputs[Sort Input].Columns[ProcedureID]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="ProcedureID"
+                      lineageId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[ProcedureID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimProcedure\Remove Duplicate Procedures.Inputs[Sort Input].Columns[StartDateTime]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="StartDateTime"
+                      lineageId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[StartDateTime]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimProcedure\Remove Duplicate Procedures.Inputs[Sort Input].Columns[StopDateTime]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="StopDateTime"
+                      lineageId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[StopDateTime]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimProcedure\Remove Duplicate Procedures.Inputs[Sort Input].Columns[PatientID]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PatientID"
+                      lineageId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[PatientID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimProcedure\Remove Duplicate Procedures.Inputs[Sort Input].Columns[EncounterID]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EncounterID"
+                      lineageId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[EncounterID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimProcedure\Remove Duplicate Procedures.Inputs[Sort Input].Columns[ProcedureCode]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="ProcedureCode"
+                      lineageId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[ProcedureCode]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimProcedure\Remove Duplicate Procedures.Inputs[Sort Input].Columns[ProcedureDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="4000"
+                      cachedName="ProcedureDescription"
+                      lineageId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[ProcedureDescription]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimProcedure\Remove Duplicate Procedures.Inputs[Sort Input].Columns[BaseCost]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BaseCost"
+                      lineageId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[BaseCost]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimProcedure\Remove Duplicate Procedures.Inputs[Sort Input].Columns[ReasonCode]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ReasonCode"
+                      lineageId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[ReasonCode]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimProcedure\Remove Duplicate Procedures.Inputs[Sort Input].Columns[ReasonDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="4000"
+                      cachedName="ReasonDescription"
+                      lineageId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[ReasonDescription]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimProcedure\Remove Duplicate Procedures.Inputs[Sort Input].Columns[ProcedureCode_Unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="ProcedureCode_Unicode"
+                      lineageId="Package\Load DimProcedure\Convert Procedure Unicode.Outputs[Derived Column Output].Columns[ProcedureCode_Unicode]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load DimProcedure\Remove Duplicate Procedures.Inputs[Sort Input].Columns[ProcedureDescription_Unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="500"
+                      cachedName="ProcedureDescription_Unicode"
+                      lineageId="Package\Load DimProcedure\Convert Procedure Unicode.Outputs[Derived Column Output].Columns[ProcedureDescription_Unicode]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load DimProcedure\Remove Duplicate Procedures.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimProcedure\Remove Duplicate Procedures.Outputs[Sort Output].Columns[ProcedureID]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Load DimProcedure\Remove Duplicate Procedures.Outputs[Sort Output].Columns[ProcedureID]"
+                      name="ProcedureID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[ProcedureID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimProcedure\Remove Duplicate Procedures.Outputs[Sort Output].Columns[StartDateTime]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load DimProcedure\Remove Duplicate Procedures.Outputs[Sort Output].Columns[StartDateTime]"
+                      name="StartDateTime">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[StartDateTime]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimProcedure\Remove Duplicate Procedures.Outputs[Sort Output].Columns[StopDateTime]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load DimProcedure\Remove Duplicate Procedures.Outputs[Sort Output].Columns[StopDateTime]"
+                      name="StopDateTime">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[StopDateTime]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimProcedure\Remove Duplicate Procedures.Outputs[Sort Output].Columns[PatientID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load DimProcedure\Remove Duplicate Procedures.Outputs[Sort Output].Columns[PatientID]"
+                      name="PatientID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[PatientID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimProcedure\Remove Duplicate Procedures.Outputs[Sort Output].Columns[EncounterID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load DimProcedure\Remove Duplicate Procedures.Outputs[Sort Output].Columns[EncounterID]"
+                      name="EncounterID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[EncounterID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimProcedure\Remove Duplicate Procedures.Outputs[Sort Output].Columns[ProcedureCode]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Load DimProcedure\Remove Duplicate Procedures.Outputs[Sort Output].Columns[ProcedureCode]"
+                      name="ProcedureCode">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[ProcedureCode]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimProcedure\Remove Duplicate Procedures.Outputs[Sort Output].Columns[ProcedureDescription]"
+                      dataType="wstr"
+                      length="4000"
+                      lineageId="Package\Load DimProcedure\Remove Duplicate Procedures.Outputs[Sort Output].Columns[ProcedureDescription]"
+                      name="ProcedureDescription">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[ProcedureDescription]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimProcedure\Remove Duplicate Procedures.Outputs[Sort Output].Columns[BaseCost]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load DimProcedure\Remove Duplicate Procedures.Outputs[Sort Output].Columns[BaseCost]"
+                      name="BaseCost">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[BaseCost]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimProcedure\Remove Duplicate Procedures.Outputs[Sort Output].Columns[ReasonCode]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load DimProcedure\Remove Duplicate Procedures.Outputs[Sort Output].Columns[ReasonCode]"
+                      name="ReasonCode">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[ReasonCode]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimProcedure\Remove Duplicate Procedures.Outputs[Sort Output].Columns[ReasonDescription]"
+                      dataType="wstr"
+                      length="4000"
+                      lineageId="Package\Load DimProcedure\Remove Duplicate Procedures.Outputs[Sort Output].Columns[ReasonDescription]"
+                      name="ReasonDescription">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output].Columns[ReasonDescription]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimProcedure\Remove Duplicate Procedures.Outputs[Sort Output].Columns[ProcedureCode_Unicode]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Load DimProcedure\Remove Duplicate Procedures.Outputs[Sort Output].Columns[ProcedureCode_Unicode]"
+                      name="ProcedureCode_Unicode"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimProcedure\Convert Procedure Unicode.Outputs[Derived Column Output].Columns[ProcedureCode_Unicode]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimProcedure\Remove Duplicate Procedures.Outputs[Sort Output].Columns[ProcedureDescription_Unicode]"
+                      dataType="wstr"
+                      length="500"
+                      lineageId="Package\Load DimProcedure\Remove Duplicate Procedures.Outputs[Sort Output].Columns[ProcedureDescription_Unicode]"
+                      name="ProcedureDescription_Unicode"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load DimProcedure\Convert Procedure Unicode.Outputs[Derived Column Output].Columns[ProcedureDescription_Unicode]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load DimProcedure.Paths[Derived Column Output]"
+              endId="Package\Load DimProcedure\Remove Duplicate Procedures.Inputs[Sort Input]"
+              name="Derived Column Output"
+              startId="Package\Load DimProcedure\Convert Procedure Unicode.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load DimProcedure.Paths[Flat File Source Output]"
+              endId="Package\Load DimProcedure\Convert Procedure Unicode.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Load DimProcedure\Clean Procedures Source.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Load DimProcedure.Paths[Sort Output]"
+              endId="Package\Load DimProcedure\DimProcedure Destination.Inputs[OLE DB Destination Input]"
+              name="Sort Output"
+              startId="Package\Load DimProcedure\Remove Duplicate Procedures.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="177.333333333334,42"
+          Id="Package\Load DimProcedure"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load DimProcedure">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Load DimProcedure\Clean Procedures Source"
+          TopLeft="134.5,92.5" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\Load DimProcedure\Convert Procedure Unicode"
+          TopLeft="132.5,210.5" />
+        <EdgeLayout
+          Id="Package\Load DimProcedure.Paths[Flat File Source Output]"
+          TopLeft="238.5,134.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,76"
+              Start="0,0"
+              End="0,68.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="228,42"
+          Id="Package\Load DimProcedure\Remove Duplicate Procedures"
+          TopLeft="172.5,308.5" />
+        <EdgeLayout
+          Id="Package\Load DimProcedure.Paths[Derived Column Output]"
+          TopLeft="240,252.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="46.5,56"
+              Start="0,0"
+              End="46.5,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24"
+                    Point2="0,28"
+                    Point3="4,28" />
+                  <mssgle:LineSegment
+                    End="42.5,28" />
+                  <mssgle:CubicBezierSegment
+                    Point1="42.5,28"
+                    Point2="46.5,28"
+                    Point3="46.5,32" />
+                  <mssgle:LineSegment
+                    End="46.5,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="207,42"
+          Id="Package\Load DimProcedure\DimProcedure Destination"
+          TopLeft="145.5,419.5" />
+        <EdgeLayout
+          Id="Package\Load DimProcedure.Paths[Sort Output]"
+          TopLeft="286.5,350.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-37.5,69"
+              Start="0,0"
+              End="-37.5,61.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.5"
+                    Point2="0,34.5"
+                    Point3="-4,34.5" />
+                  <mssgle:LineSegment
+                    End="-33.5,34.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-33.5,34.5"
+                    Point2="-37.5,34.5"
+                    Point3="-37.5,38.5" />
+                  <mssgle:LineSegment
+                    End="-37.5,61.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load DimProcedure\DimProcedure Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

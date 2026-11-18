@@ -1,0 +1,1020 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/2/2026 12:49:43 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-U5SG2SJ"
+  DTS:CreatorName="DESKTOP-U5SG2SJ\Sinoli"
+  DTS:DTSID="{53499B29-765F-4672-A90A-E7C186F78504}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{29A1C305-0983-4378-B53B-478DEB81AE31}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FF_Clean_Organizations_v2]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{8382593B-1097-4499-A482-B207C03A2FE3}"
+      DTS:ObjectName="FF_Clean_Organizations_v2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Healthcare_DWBI_Project\02_Staging\Cleaned_Data\Cleaned_Data\Clean_Organizations.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrganizationID"
+              DTS:DTSID="{24481514-1211-48EC-A947-5C2E051B5D90}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrganizationName"
+              DTS:DTSID="{3CA76234-4410-4187-BD24-075076C50270}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Address"
+              DTS:DTSID="{AC8D783E-D5CE-482F-A18A-A2F4F356C051}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="City"
+              DTS:DTSID="{54BC9F81-24C4-496F-9DA4-487FE5020767}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="State"
+              DTS:DTSID="{5512E855-F8E0-445D-8855-D67FE0C0546B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ZIP"
+              DTS:DTSID="{DF376C0C-C29E-4ECF-9FD7-DF875687379B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Latitude"
+              DTS:DTSID="{1967C461-E32F-469D-9C95-8ACAAE8C1520}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Longitude"
+              DTS:DTSID="{BBA1CEA9-43C9-455E-AF7F-AC695AE9AF60}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Phone"
+              DTS:DTSID="{E9364658-567C-4AB1-B31B-9C82F926CE6C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Revenue"
+              DTS:DTSID="{6430B889-A518-4917-B8FD-F3D31A72F8A6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Utilization"
+              DTS:DTSID="{75971285-8838-41E9-A90B-C3A756CC32C9}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{63E5258C-4B1E-4AEC-8E47-EB430DFC1C36}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Healthcare_DWBI_Project\02_Staging\Cleaned_Data\Cleaned_Data\Clean_Organizations.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrganizationID"
+              DTS:DTSID="{112615C1-AA32-40A9-A1B5-67B6E3D81EF2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrganizationName"
+              DTS:DTSID="{EA73785D-632F-485E-899E-AFC52316DA65}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Address"
+              DTS:DTSID="{1CDB00F1-CEF7-4C06-BC1A-4D5F5EED046F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="City"
+              DTS:DTSID="{B14D92CB-A9AF-4E97-BCED-406A7B05C52E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="State"
+              DTS:DTSID="{A22B42C2-AB78-4E89-8094-A9C41EFC09E7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ZIP"
+              DTS:DTSID="{C4650B98-4576-46F9-A414-239C818FA85D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Latitude"
+              DTS:DTSID="{98E6F131-AE70-4424-8E9D-64831EB36112}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Longitude"
+              DTS:DTSID="{0F4B33DC-892F-4ABB-9E08-CF7F23112199}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Phone"
+              DTS:DTSID="{EF32CAF7-293F-4E5C-98F0-EC5464B911DA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Revenue"
+              DTS:DTSID="{B195542C-E747-47E4-B047-BC79E9530C5B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Utilization"
+              DTS:DTSID="{89015FAA-3801-4F01-B1B2-9B27F7070164}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load DimOrganization"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{C48F9750-2FF0-4C54-926F-705207F8E0DA}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load DimOrganization"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load DimOrganization\Clean Organizations Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2057"
+              name="Clean Organizations Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load DimOrganization\Clean Organizations Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[FF_Clean_Organizations_v2]"
+                  connectionManagerRefId="Package.ConnectionManagers[FF_Clean_Organizations_v2]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].Columns[OrganizationID]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].ExternalColumns[OrganizationID]"
+                      length="100"
+                      lineageId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].Columns[OrganizationID]"
+                      name="OrganizationID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].Columns[OrganizationName]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].ExternalColumns[OrganizationName]"
+                      length="1000"
+                      lineageId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].Columns[OrganizationName]"
+                      name="OrganizationName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].Columns[Address]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].ExternalColumns[Address]"
+                      length="500"
+                      lineageId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].Columns[Address]"
+                      name="Address"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].Columns[City]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].ExternalColumns[City]"
+                      length="200"
+                      lineageId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].Columns[State]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].ExternalColumns[State]"
+                      length="100"
+                      lineageId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].Columns[State]"
+                      name="State"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].Columns[ZIP]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].ExternalColumns[ZIP]"
+                      length="50"
+                      lineageId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].Columns[ZIP]"
+                      name="ZIP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].Columns[Latitude]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].ExternalColumns[Latitude]"
+                      length="50"
+                      lineageId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].Columns[Latitude]"
+                      name="Latitude"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].Columns[Longitude]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].ExternalColumns[Longitude]"
+                      length="50"
+                      lineageId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].Columns[Longitude]"
+                      name="Longitude"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].Columns[Phone]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].ExternalColumns[Phone]"
+                      length="100"
+                      lineageId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].Columns[Phone]"
+                      name="Phone"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].Columns[Revenue]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].ExternalColumns[Revenue]"
+                      length="50"
+                      lineageId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].Columns[Revenue]"
+                      name="Revenue"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].Columns[Utilization]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].ExternalColumns[Utilization]"
+                      length="50"
+                      lineageId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].Columns[Utilization]"
+                      name="Utilization"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].ExternalColumns[OrganizationID]"
+                      dataType="wstr"
+                      length="100"
+                      name="OrganizationID" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].ExternalColumns[OrganizationName]"
+                      dataType="wstr"
+                      length="200"
+                      name="OrganizationName" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].ExternalColumns[Address]"
+                      codePage="65001"
+                      dataType="str"
+                      length="500"
+                      name="Address" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].ExternalColumns[City]"
+                      codePage="65001"
+                      dataType="str"
+                      length="200"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].ExternalColumns[State]"
+                      codePage="65001"
+                      dataType="str"
+                      length="100"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].ExternalColumns[ZIP]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="ZIP" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].ExternalColumns[Latitude]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Latitude" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].ExternalColumns[Longitude]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Longitude" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].ExternalColumns[Phone]"
+                      codePage="65001"
+                      dataType="str"
+                      length="100"
+                      name="Phone" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].ExternalColumns[Revenue]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Revenue" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].ExternalColumns[Utilization]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Utilization" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load DimOrganization\Convert Organization Unicode"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Convert Organization Unicode"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load DimOrganization\Convert Organization Unicode.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load DimOrganization\Convert Organization Unicode.Inputs[Derived Column Input].Columns[OrganizationID]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="OrganizationID"
+                      lineageId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].Columns[OrganizationID]" />
+                    <inputColumn
+                      refId="Package\Load DimOrganization\Convert Organization Unicode.Inputs[Derived Column Input].Columns[OrganizationName]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="1000"
+                      cachedName="OrganizationName"
+                      lineageId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].Columns[OrganizationName]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load DimOrganization\Convert Organization Unicode.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load DimOrganization\Convert Organization Unicode.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimOrganization\Convert Organization Unicode.Outputs[Derived Column Output].Columns[OrgID_Unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\Load DimOrganization\Convert Organization Unicode.Outputs[Derived Column Output].Columns[OrgID_Unicode]"
+                      name="OrgID_Unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,100)#{Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].Columns[OrganizationID]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,100)OrganizationID</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DimOrganization\Convert Organization Unicode.Outputs[Derived Column Output].Columns[OrgName_Unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="200"
+                      lineageId="Package\Load DimOrganization\Convert Organization Unicode.Outputs[Derived Column Output].Columns[OrgName_Unicode]"
+                      name="OrgName_Unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,200)#{Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output].Columns[OrganizationName]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,200)OrganizationName</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load DimOrganization\Convert Organization Unicode.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load DimOrganization\Convert Organization Unicode.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimOrganization\Convert Organization Unicode.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load DimOrganization\Convert Organization Unicode.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load DimOrganization\Convert Organization Unicode.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load DimOrganization\Convert Organization Unicode.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load DimOrganization\DimOrganization Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DimOrganization Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimOrganization]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load DimOrganization\DimOrganization Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{8EA86E27-4F61-45B8-B202-CB4168DBAAB6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.HealthcareDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load DimOrganization\DimOrganization Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load DimOrganization\DimOrganization Destination.Inputs[OLE DB Destination Input].Columns[OrgID_Unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="OrgID_Unicode"
+                      externalMetadataColumnId="Package\Load DimOrganization\DimOrganization Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrganizationID]"
+                      lineageId="Package\Load DimOrganization\Convert Organization Unicode.Outputs[Derived Column Output].Columns[OrgID_Unicode]" />
+                    <inputColumn
+                      refId="Package\Load DimOrganization\DimOrganization Destination.Inputs[OLE DB Destination Input].Columns[OrgName_Unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="OrgName_Unicode"
+                      externalMetadataColumnId="Package\Load DimOrganization\DimOrganization Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrganizationName]"
+                      lineageId="Package\Load DimOrganization\Convert Organization Unicode.Outputs[Derived Column Output].Columns[OrgName_Unicode]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load DimOrganization\DimOrganization Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrganizationKey]"
+                      dataType="i4"
+                      name="OrganizationKey" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimOrganization\DimOrganization Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrganizationID]"
+                      dataType="wstr"
+                      length="100"
+                      name="OrganizationID" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimOrganization\DimOrganization Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrganizationName]"
+                      dataType="wstr"
+                      length="200"
+                      name="OrganizationName" />
+                    <externalMetadataColumn
+                      refId="Package\Load DimOrganization\DimOrganization Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrganizationType]"
+                      dataType="wstr"
+                      length="100"
+                      name="OrganizationType" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load DimOrganization\DimOrganization Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load DimOrganization\DimOrganization Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DimOrganization\DimOrganization Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load DimOrganization\DimOrganization Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load DimOrganization\DimOrganization Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load DimOrganization\DimOrganization Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load DimOrganization.Paths[Derived Column Output]"
+              endId="Package\Load DimOrganization\DimOrganization Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Load DimOrganization\Convert Organization Unicode.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load DimOrganization.Paths[Flat File Source Output]"
+              endId="Package\Load DimOrganization\Convert Organization Unicode.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Load DimOrganization\Clean Organizations Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Load DimOrganization"
+          TopLeft="173.5,77.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load DimOrganization">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="216,42"
+          Id="Package\Load DimOrganization\Clean Organizations Source"
+          TopLeft="103.681818181818,30.9545454545455" />
+        <NodeLayout
+          Size="219,42"
+          Id="Package\Load DimOrganization\DimOrganization Destination"
+          TopLeft="156.409090909091,344.590909090909" />
+        <NodeLayout
+          Size="226,42"
+          Id="Package\Load DimOrganization\Convert Organization Unicode"
+          TopLeft="152.772727272727,143.681818181818" />
+        <EdgeLayout
+          Id="Package\Load DimOrganization.Paths[Flat File Source Output]"
+          TopLeft="211.681818181818,72.9545454545455">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="54.0909090909091,70.7272727272727"
+              Start="0,0"
+              End="54.0909090909091,63.2272727272727">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.3636363636364" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.3636363636364"
+                    Point2="0,35.3636363636364"
+                    Point3="4,35.3636363636364" />
+                  <mssgle:LineSegment
+                    End="50.0909090909091,35.3636363636364" />
+                  <mssgle:CubicBezierSegment
+                    Point1="50.0909090909091,35.3636363636364"
+                    Point2="54.0909090909091,35.3636363636364"
+                    Point3="54.0909090909091,39.3636363636364" />
+                  <mssgle:LineSegment
+                    End="54.0909090909091,63.2272727272727" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load DimOrganization.Paths[Derived Column Output]"
+          TopLeft="265.840909090909,185.681818181818">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,158.909090909091"
+              Start="0,0"
+              End="0,151.409090909091">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,151.409090909091" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load DimOrganization\DimOrganization Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
